@@ -1,0 +1,365 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP9+wNYWGNZJ9GEWdzZlz6V",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/PradoKauan/Tecnologias-e-Programa-o-Integrada/blob/main/Lista%20de%20Exercicios%202\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ULIqokri0x0O"
+      },
+      "outputs": [],
+      "source": [
+        "#1 Crie uma função que conte o número de vogais em uma string\n",
+        "\n",
+        "def vogais(palavra):\n",
+        "  vogais=\"aeiouAEIOU\"\n",
+        "  t_vogais=0\n",
+        "  for letra in palavra:\n",
+        "    if letra in vogais:\n",
+        "      t_vogais +=1\n",
+        "  return t_vogais\n",
+        "\n",
+        "dig = input((\"Digite uma palavra: \"))\n",
+        "print(f\"A palavra '{dig}' tem '{vogais(dig)}'vogais\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#2. Escreva um programa que substitua todas as ocorrências de uma letra em uma string por outra letra.\n",
+        "\n",
+        "def substituir_letra (palavra,letra_antiga,letra_nova):\n",
+        "  nova_palavra = ''\n",
+        "  for letra in palavra:\n",
+        "    if letra == letra_antiga:\n",
+        "      nova_palavra += letra_nova\n",
+        "    else:\n",
+        "      nova_palavra += letra\n",
+        "  return nova_palavra\n",
+        "\n",
+        "palavra = (input(\"Digite uma palavra: \"))\n",
+        "letra_antiga = (input(\"Digite a letra antiga: \"))\n",
+        "letra_nova = (input(\"Digite a letra nova: \"))\n",
+        "\n",
+        "print(f\"A palavra '{palavra}' com a letra '{letra_nova}' fica '{substituir_letra (palavra,letra_antiga,letra_nova)}'\")\n"
+      ],
+      "metadata": {
+        "id": "jD4Xheqd54NY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#3. Crie uma função que retorne o número de palavras em uma string.\n",
+        "\n",
+        "def texto (palavra):\n",
+        "  separar = palavra.split()\n",
+        "  return len(separar)\n",
+        "\n",
+        "frase = input((\"Digite uma frase: \"))\n",
+        "print(f\"A frase '{frase}' digitada tem '{texto(frase)}' palavras\")\n"
+      ],
+      "metadata": {
+        "id": "gADLezn58laM"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#4. Crie uma função que conte o número de ocorrências de uma determinada palavra em uma frase.\n",
+        "\n",
+        "\n",
+        "def contagem (frase, palavra):\n",
+        "  cont = 0\n",
+        "  for palavras in frase.split():\n",
+        "    if palavras == palavra:\n",
+        "      cont += 1\n",
+        "  return cont\n",
+        "\n",
+        "frase = input(\"Digite uma frase: \")\n",
+        "palavra = input(\"Digite a palavra a ser contada: \")\n",
+        "\n",
+        "print(f\"A palavra '{palavra}' se repete '{contagem(frase, palavra)}' vez/vezes na frase '{frase}'\")"
+      ],
+      "metadata": {
+        "id": "Ks4C9Edk_nGZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#5 Crie uma função que encontre os k maiores elementos em uma lista, mantendo a ordem original.\n",
+        "\n",
+        "qtd = int(input(\"Digite a quantidade de elementos que serão inseridos na lista: \"))\n",
+        "calc = [0]*qtd\n",
+        "\n",
+        "for i in range (0,qtd):\n",
+        "  calc[i] = input(\"Digite os valores da lista: \")\n",
+        "print(f\"Lista: {calc}\")\n",
+        "\n",
+        "calc.sort()\n",
+        "calc.reverse()\n",
+        "# print(f\"nova{calc}\")\n",
+        "print(f\"Maiores números: {calc[0]}, {calc[1]} e {calc[2]}\")"
+      ],
+      "metadata": {
+        "id": "9eNSnE7BJVdO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. Escreva um programa que implemente a soma de matrizes usando listas aninhadas.\n",
+        "\n",
+        "matriz_1 = [[1,2],\n",
+        "             [3,4]]\n",
+        "\n",
+        "matriz_2 = [[5,6],\n",
+        "            [7,8]]\n",
+        "\n",
+        "matriz_result = [[0,0],\n",
+        "                 [0,0]]\n",
+        "\n",
+        "for i, linha in enumerate(matriz_1):\n",
+        "  for j, coluna in enumerate(linha):\n",
+        "    matriz_result[i][j] = matriz_1[i][j] + matriz_2[i][j]\n",
+        "\n",
+        "print(f\"Matriz resultante: {matriz_result}\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DoAm0dhaRTMr",
+        "outputId": "304f9ed5-7b66-44c1-9977-7bf3e6912856"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Matriz resultante: [[6, 8], [10, 12]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 7. Crie uma função que encontre a interseção de duas listas sem usar conjuntos.\n",
+        "\n",
+        "def intersecao(lista1,lista2):\n",
+        "  repete=[]\n",
+        "  for num in lista1:\n",
+        "    if num in lista2:\n",
+        "      repete.append(num)\n",
+        "  return repete\n",
+        "\n",
+        "lista1=[1,2,3,4,5,6]\n",
+        "lista2=[4,5,6,7,8,9]\n",
+        "\n",
+        "print(f\"Lista 1: {lista1}\")\n",
+        "print(f\"Lista 2: {lista2}\")\n",
+        "print(f\"A interseção entre as listas é {intersecao(lista1,lista2)}\")\n"
+      ],
+      "metadata": {
+        "id": "JeMTRxs_Tq7X"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 8. Crie uma função que embaralhe os elementos de uma lista de forma aleatória.\n",
+        "\n",
+        "import random\n",
+        "\n",
+        "def embaralhar (lista):\n",
+        "  random.shuffle(lista)\n",
+        "  return lista\n",
+        "\n",
+        "lista_origin = [1,2,3,4,5,6]\n",
+        "lista_embaralha = embaralhar(lista_origin.copy())\n",
+        "print(\"Lista Original: \",lista_origin)\n",
+        "print(\"Lista Embaralhada: \", lista_embaralha)"
+      ],
+      "metadata": {
+        "id": "qVqIb1jwbu_P"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#9. Escreva um programa que encontre o par de elementos em uma lista cuja soma seja igual a um determinado valor.\n",
+        "\n",
+        "def encontra (lista, resultado):\n",
+        "  pares =[]\n",
+        "  for i in range(len(lista)):\n",
+        "    for j in range(i+1,len(lista)):\n",
+        "      if lista[i] + lista[j] == resultado:\n",
+        "        pares.append((lista[i], lista[j]))\n",
+        "  return pares\n",
+        "\n",
+        "lista = [1,2,3,5,6,4]\n",
+        "resultado = 7\n",
+        "\n",
+        "pares_encontrados = encontra(lista, resultado)\n",
+        "print(f\"Pares encontrados na lista {lista} com soma {resultado}: {pares_encontrados}\")\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e9RsR7vZdhFu",
+        "outputId": "28374be4-7dfc-4f04-bb10-ab21ac5bf031"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Pares encontrados na lista [1, 2, 3, 5, 6, 4] com soma 7: [(1, 6), (2, 5), (3, 4)]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#10.Criar um algoritmo para calcular a frequência que uma palavra aparece em um texto\n",
+        "\n",
+        "def calcular_frequencia_palavras(texto):\n",
+        "    # Remover pontuação do texto e converter para minúsculas para garantir consistência\n",
+        "    texto_limpo = texto.lower().translate(str.maketrans('', '', '.,!?;:'))\n",
+        "\n",
+        "    # Dividir o texto em palavras\n",
+        "    palavras = texto_limpo.split()\n",
+        "\n",
+        "    # Inicializar um dicionário para contar as frequências\n",
+        "    frequencias = {}\n",
+        "\n",
+        "    # Contar as frequências de cada palavra\n",
+        "    for palavra in palavras:\n",
+        "        if palavra in frequencias:\n",
+        "            frequencias[palavra] += 1\n",
+        "        else:\n",
+        "            frequencias[palavra] = 1\n",
+        "\n",
+        "    return frequencias\n",
+        "\n",
+        "texto = \"Este é um exemplo de texto, um texto para testar o exemplo. Testar é bom!\"\n",
+        "frequencias = calcular_frequencia_palavras(texto)\n",
+        "for palavra, frequencia in frequencias.items():\n",
+        "    print(f\"'{palavra}': {frequencia}\")\n"
+      ],
+      "metadata": {
+        "id": "x8ESxG79hn39"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 11.Escreva um programa que identifique todos os números primos em uma lista de números inteiros.\n",
+        "\n",
+        "def eh_primo(n):\n",
+        "    \"\"\"Verifica se um número é primo.\"\"\"\n",
+        "    if n <= 1:\n",
+        "        return False\n",
+        "    for i in range(2, int(n**0.5) + 1):\n",
+        "        if n % i == 0:\n",
+        "            return False\n",
+        "    return True\n",
+        "\n",
+        "def encontrar_primos_na_lista(lista_numeros):\n",
+        "    \"\"\"Identifica todos os números primos em uma lista de números inteiros.\"\"\"\n",
+        "    primos = []\n",
+        "    for numero in lista_numeros:\n",
+        "        if eh_primo(numero):\n",
+        "            primos.append(numero)\n",
+        "    return primos\n",
+        "\n",
+        "minha_lista = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 29, 30, 37, 41, 42]\n",
+        "numeros_primos = encontrar_primos_na_lista(minha_lista)\n",
+        "print(f\"Números primos na lista: {numeros_primos}\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Mh6p3ak7jEnc",
+        "outputId": "13216601-67e7-4e65-bc86-f3426058f20e"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Números primos na lista: [2, 3, 5, 7, 11, 29, 37, 41]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#12.Implemente um algoritmo para encontrar a menor string em uma lista de strings.\n",
+        "\n",
+        "def encontrar_menor_string(lista_strings):\n",
+        "    return min(lista_strings, key=len)\n",
+        "\n",
+        "lista_strings = [\"banana\", \"abacaxi\", \"morango\", \"uva\", \"laranja\"]\n",
+        "print(f\"Menor: {encontrar_menor_string(lista_strings)}\")"
+      ],
+      "metadata": {
+        "id": "W_yfOMp4lbrt"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
